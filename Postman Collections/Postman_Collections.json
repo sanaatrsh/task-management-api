@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "755ae546-7f7c-4cd1-9a70-45c0c5cfbb5a",
+		"name": "task-management-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "all tasks",
+					"id": "140d2042-eab6-488d-b882-a3d88e789c8f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzI2OTk5MzI1LCJleHAiOjE3MjcwMDI5MjUsIm5iZiI6MTcyNjk5OTMyNSwianRpIjoiZEhWbE5mSlQ3QlZMZmY1dCIsInN1YiI6IjYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.2s5SWRxXls7I5FCoDv7_Ar8eE4GSQjfccKhRftHkAu8"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{host}}task"
+					},
+					"response": []
+				},
+				{
+					"name": "create task",
+					"id": "df9e5166-e812-4ddf-8228-b578572cf059",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzI3MDAxMTEyLCJleHAiOjE3MjcwMDQ3MTIsIm5iZiI6MTcyNzAwMTExMiwianRpIjoiS1FOUVY1TWg4VVZYRU1hTCIsInN1YiI6IjciLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.4GWuO09J08NYkSLGT7Bmfd_DIBJDWMxQj75hU6DrJxA"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "description",
+									"value": "hello again",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "pending",
+									"type": "text"
+								},
+								{
+									"key": "assigned_to",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "created_by",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "due_date",
+									"value": "2001/1/1",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{host}}task/create"
+					},
+					"response": []
+				},
+				{
+					"name": "assign task",
+					"id": "7c3df5e0-8e9d-4b30-b5ec-e50201055a3a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzI3MDAxMTEyLCJleHAiOjE3MjcwMDQ3MTIsIm5iZiI6MTcyNzAwMTExMiwianRpIjoiS1FOUVY1TWg4VVZYRU1hTCIsInN1YiI6IjciLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.4GWuO09J08NYkSLGT7Bmfd_DIBJDWMxQj75hU6DrJxA"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "assigned_to",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{host}}task/assign/1"
+					},
+					"response": []
+				},
+				{
+					"name": "update task status",
+					"id": "f38c0629-80d1-4ec6-a688-ff4990d4de87",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzI3MDAxNTg5LCJleHAiOjE3MjcwMDUxODksIm5iZiI6MTcyNzAwMTU4OSwianRpIjoiZVBWbU1OYXFaQmNIdnZXbCIsInN1YiI6IjgiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.0dSqcvtXCwXtpcsRv-lponzgRK-Ds8F66RDV9X6f7fc"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "completed",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{host}}task/status/2"
+					},
+					"response": []
+				},
+				{
+					"name": "assign role",
+					"id": "8b3dc193-05ba-423d-8a2b-0cea58f80084",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzI3MDAyNjQxLCJleHAiOjE3MjcwMDYyNDEsIm5iZiI6MTcyNzAwMjY0MSwianRpIjoiaTJtZnVkbWk5bWY0ZVp0YyIsInN1YiI6IjkiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.QLVPyc_sD6RE5AZtKGdSuv4dg7mf0jenl95btA4Uu6k"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "8",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{host}}assign_role/"
+					},
+					"response": []
+				},
+				{
+					"name": "filter",
+					"id": "955ffe0f-b4fd-4ca2-b50c-5db0b54a3bd3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzI3MDAyNjQxLCJleHAiOjE3MjcwMDYyNDEsIm5iZiI6MTcyNzAwMjY0MSwianRpIjoiaTJtZnVkbWk5bWY0ZVp0YyIsInN1YiI6IjkiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.QLVPyc_sD6RE5AZtKGdSuv4dg7mf0jenl95btA4Uu6k"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}tasks/?status=completed",
+							"host": [
+								"{{host}}tasks"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "completed"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "ae850498-0ae2-4586-965f-2974cf5f13d7"
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"id": "c4e0c9f9-8671-4f56-b976-a8dbe9754b20",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "user77@example",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{host}}login"
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"id": "997fdac1-235d-408a-ab7a-1c240772b407",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzI3MDAxMTEyLCJleHAiOjE3MjcwMDQ3MTIsIm5iZiI6MTcyNzAwMTExMiwianRpIjoiS1FOUVY1TWg4VVZYRU1hTCIsInN1YiI6IjciLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.4GWuO09J08NYkSLGT7Bmfd_DIBJDWMxQj75hU6DrJxA"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{host}}logout"
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"id": "ec91bc6d-0385-4765-9a3c-68d9df9cb45d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzI3MDAxNTg5LCJleHAiOjE3MjcwMDUxODksIm5iZiI6MTcyNzAwMTU4OSwianRpIjoiZVBWbU1OYXFaQmNIdnZXbCIsInN1YiI6IjgiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.0dSqcvtXCwXtpcsRv-lponzgRK-Ds8F66RDV9X6f7fc"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "user2",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "user77@example",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}register?",
+							"host": [
+								"{{host}}register"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "30fe8fab-fa8c-4cce-98e1-f061573709e4"
+		}
+	]
+}
